@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if user.is_authenticated %}
+
+    <div class="main" >
+
+        <div class="createEvent-title"><h1>Страница создания мероприятия</h1></div>
+        <main>
+            <form method="POST" class="post-form" enctype=multipart/form-data>{% csrf_token %}
+            <div class="createEvent-list">
+                <div class="createEvent-list-phone grid">
+                    <div class="createEvent-list-phone-name name">
+                        <p>Фотография:</p>
+                    </div>
+                    <div class="createEvent-list-phone-btn">
+                        {{form.image}}
+
+                        <label for="id_image">Загрузить фото</label>
+
+                    </div>
+                </div>
+
+                <div class="createEvent-list-name grid">
+                    <div class="createEvent-list-name-name name">
+                        <p>Название:</p>
+                    </div>
+                    <div class="createEvent-list-name-input">
+                        {{form.title}}
+
+                    </div>
+                </div>
+                <div class="createEvent-list-disc grid">
+                    <div class="createEvent-list-disc-name name">
+                        <p>Описание:</p>
+                    </div>
+                    <div class="createEvent-list-disc-textArea">
+                        {{ form.Text }}
+                    </div>
+                </div>
+                <div class="createEvent-list-preview grid">
+                    <div class="createEvent-list-preview-name name">
+                        <p>Описание для превью:</p>
+                    </div>
+                    <div class="createEvent-list-preview-textArea">
+                        {{form.small_description}}
+
+                    </div>
+                </div>
+                <div class="createEvent-list-start grid">
+                    <div class="createEvent-list-start-name name">
+                        <p>Начало:</p>
+                    </div>
+                    <div class="createEvent-list-start-input">
+                        {{form.event_start}}
+
+                    </div>
+                </div>
+                <div class="createEvent-list-end grid">
+                    <div class="createEvent-list-end-name name">
+                        <p>Конец:</p>
+                    </div>
+                    <div class="createEvent-list-end-input">
+                        {{form.event_end}}
+
+                    </div>
+                </div>
+                <div class="createEvent-list-type grid">
+                    <div class="createEvent-list-type-name name">
+                        <p>Тип:</p>
+                    </div>
+                    <div class="createEvent-list-type-input">
+                        <div class="createEvent-list-type-input-type">
+                            {{form.filter2}}
+                           <!--  <select id="id_filter" name="state" style="width: 100%">
+                                <option value="AL">Онлайн</option>
+                                <option value="WY">Оффлайн</option>
+                              </select> -->
+                        </div>
+                        <div class="createEvent-list-type-input-place">
+                            {{form.filter}}
+                           <!--  <select id="id_filter2" name="state" style="width: 100%">
+                                <option value="AL">Хакатон</option>
+                                <option value="WY">Митап</option>
+                                <option value="WY">Завтрак</option>
+                                <option value="WY">Конференция</option>
+                                <option value="WY">Курсы</option>
+                              </select>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="createEvent-list-tags grid">
+                    <div class="createEvent-list-tags-name name">
+                        <p>Тэги:</p>
+                    </div>
+                    <div class="createEvent-list-tags-input">
+                        {{form.tags}}
+
+                    </div>
+                </div>
+                <div class="createEvent-list-submit">
+                    <button type="submit" class="save">Создать</button>
+                </div>
+            </div>
+            <script>
+                    var example = flatpickr('#id_event_start');
+                    var example = flatpickr('#id_event_end');    
+                    $('#id_tags').select2();
+                    $('#id_filter').select2({
+                        minimumResultsForSearch : Infinity
+                    });
+                    $('#id_filter2').select2({
+                        minimumResultsForSearch : Infinity
+                    });
+            </script>
+            </form>
+        </main>
+        </div>
+    {% else %}
+    <h1> Йоу ты что тут вообще делаешь, пойди зарегайся</h1>
+    {% endif %}
+{% endblock %}

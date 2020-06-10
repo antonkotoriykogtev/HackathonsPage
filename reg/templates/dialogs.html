@@ -1,0 +1,39 @@
+    @@include('parts/header.html')
+    <style>
+        .menu-item-1 {
+            background: #2D6CDF;
+        }
+        .menu-item-1:hover {
+            opacity: .9;
+        }
+    </style>
+    <div class="main">
+        <main>
+            <div class="dialog-search">
+                <div class="dialog-search-icon"><i class="fas fa-search"></i></div>
+                <div class="dialog-search-input"><input type="text" id="dialog-search-id" class="dialog-search-input_input" oninput="showDeleteButtonDialogs()" placeholder="Поиск собеседников"></div>
+                <div class="dialog-search-delete"  onclick="searchDeleteDialogs()"></div>
+            </div>
+            <a href="#">
+                <div class="dialog-item">
+                    <div class="dialog-item-img">
+                        <img src="./img/Screenshot_2.png" alt="">
+                    </div>
+                    <div class="dialog-item-info">
+                        <div class="dialog-item-info-header">
+                            <div class="dialog-item-info-header-name">
+                                <span>Программист_с_урала</span>    
+                            </div>
+                            <div class="dialog-item-info-header-date">
+                                <span>3 марта</span>
+                            </div>
+                        </div>
+                        <div class="dialog-item-info-message">
+                            <p class="dialog-item-info-message-clip"><span>Сообщениеasdasdasdasdasdasdasdasdasdasdasdsadasdsadasdasdasdsdsadasdasasfasfsffasfasasd</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </main>
+    </div>
+    @@include('parts/footer.html')

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if user.is_authenticated %}
+     <div class="main" style="color:white">
+    <main>
+      <div class="createPost-title">
+        <h1>Написание поста</h1>
+      </div>
+    <form method="POST" class="post-form" enctype=multipart/form-data>
+      {% csrf_token %}
+        <div class="createPost-textarea">
+          {{ form.Text }}
+
+        </div>
+        <div class="createPost-btn">
+          <button type="submit" class="save btn btn-default">Опубликовать</button>
+        </div>
+    </form>
+    </main>
+    </div>
+    {% else %}
+        <h1> Не, иди регайся</h1>
+    {% endif %}
+
+
+
+{% endblock %}

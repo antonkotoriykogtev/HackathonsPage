@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="main" style="color:white">
+    <main>
+    {% if user.is_authenticated %}
+
+                    {% else %}
+                     <h1><a href="{% url 'login'%}?next={{request.path}}">Войдите, чтобы создать пост</a></h1>
+                    {% endif %}
+
+      {% for event in events %}
+     <a href="/event/{{event.id}}" class="event-content-item-link">
+        <div class="event-content-item">
+            <div class="event-content-item-img">
+                <img src="{{ event.image.url }}" alt="">
+            </div>
+            <div class="event-content-item-info">
+                <div class="event-content-item-info-header">
+                    <div class="event-content-item-info-header-name">
+                        <p class="event-content-item-info-header-name_name">{{event.title|safe}}</p>
+                    </div>
+                    <div class="event-content-item-info-header-date">
+                        <p class="event-content-item-info-header-date_date">{{event.event_start|date:"M d" }}-{{event.event_end|date:"M d" }}</p>
+                    </div>
+                </div>
+                <div class="event-content-item-info-main">
+                    <div class="event-content-item-info-main-type">
+                        <p class="event-content-item-info-main-type_type">{{event.filter }} {{event.filter2 }}</p>
+                    </div>
+                    <div class="event-content-item-info-main-disc">
+                        <p class="event-content-item-info-main-disc_disc">
+                            {{event.small_description|safe}}
+                        </p>
+                    </div>
+                     <a href="https://toxa.pythonanywhere.com/event_edit/{{event.added_by }}">
+                    <div class="event-content-item-info-main-text">
+                        <p class="event-content-item-info-main-text_text">
+                            Организатор:
+                        </p>
+                    </div>
+                    <div class="event-content-item-info-main-organizer">
+                        <p class="event-content-item-info-main-organizer_organizer">
+                          {{event.added_by }}
+                        </p>
+                    </div>
+                     </a>
+                    <div class="event-content-item-info-main-tags">
+                         {% for tag in event.tags.all %}
+                             <div class="event-content-item-info-main-tags-wrapper">
+                                <p class="event-content-item-info-main-tags-wrapper-text"> {{ tag.name }}</p>
+                            </div>
+
+
+                            {% endfor %}
+
+                    </div>
+                    <a href="https://toxa.pythonanywhere.com/{{event.id }}">Изменить информацию </a>
+                </div>
+            </div>
+        </div>
+    </a>
+
+
+{% endfor %}
+
+   {% for post in posts %}
+<div class="event-content-post">
+        <a href="#" class="event-content-post-img-link">
+            <div class="event-content-post-img">
+                <img src="/test/google_script/search.svg" alt="" class="event-content-post-img_img">
+            </div>
+        </a>
+        <div class="event-content-post-info">
+            <div class="event-content-post-info-header">
+                <div class="event-content-post-info-header-name">
+                    <a href="https://toxa.pythonanywhere.com/profileview/{{post.added_by }}">
+                        <p class="event-content-post-info-header-name_name">{{ post.added_by }}</p>
+                    </a>
+                </div>
+                <div class="event-content-post-info-header-date">
+                    <p class="event-content-post-info-header-date_date">{{ post.pub_date }}</p>
+                </div>
+            </div>
+            <div class="event-content-post-info-main">
+                <p class="event-content-post-info-main_text">
+                   {{ post.Text }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+     </main>
+    </div>
+{% endblock %}

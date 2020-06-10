@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Шаг 1</title>
+	<meta charset="utf-8">
+      {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/second_reg.css' %}">
+
+</head>
+<body>
+
+
+<div class="mainSecond" style="
+    height: auto;
+    margin-top: 80px;
+    min-height: 550px;
+">
+<div class="info">
+	<h1 style="font-size: 24px;">СОЗДАЙТЕ АККАУНТ</h1>
+
+</div>
+	<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+		  {% csrf_token %}
+		  {{ form.as_p }}
+			{% if redirect_field_value %}
+		  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+		  {% endif %}
+		<input type="submit" name="first_create" style="width:300px" value="Создать аккаунт">
+	</form>
+	<div>
+    </div>
+
+</div>
+</body>
+</html>

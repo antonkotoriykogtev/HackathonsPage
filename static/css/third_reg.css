@@ -1,0 +1,101 @@
+body{
+	background-color: rgba(7, 30, 61, 1);
+	display: flex;
+  	justify-content: space-around;
+  	align-items: center;
+  	flex-direction: column;
+}
+.steps{
+	margin-top: 50px;
+	width: 500px;
+	color: white;
+	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+  	flex-direction: row;
+}
+.stepOne, .stepTwo{
+	display: flex;
+  	justify-content: space-around;
+  	align-items: center;
+  	flex-direction: column;
+  	font-family: "Roboto";
+	font-weight: normal;
+}
+.mainSecond{
+	background-color: rgba(1, 54, 114, 1);
+	width: 400px;
+	height: 400px;
+	color: white;
+	border-radius: 20px;
+	margin-top: 150px;
+	position: relative;
+	display: flex;
+  	justify-content: space-around;
+  	align-items: center;
+  	flex-direction: column;
+  	transform: scale(1,1);
+  	transition-duration: 1s;
+}
+h1{
+	height: 42px;
+	font-size: 36px;
+	font-family: "Roboto";
+	font-weight: normal;
+}
+form{
+	width: 300px;
+	font-family: "Roboto";
+	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+  	flex-direction: column;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+.info{
+	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+  	flex-direction: column;
+}
+input{
+	display: block;
+	width: 290px;
+	border-radius: 5px;
+	border-style: none;
+	height:30px;
+}
+input[type=submit]{
+	width: 200px;
+	display: block;
+	background-color: rgba(7, 30, 61, 1);
+	color: white;
+	font-size: 14px;
+}
+input[type=text]{
+	padding-left: 10px;
+}
+input[type=submit]{
+	width: 100px;
+	display: block;
+	background-color: rgba(10, 143, 15, 1);
+	color: white;
+	font-size: 14px;
+}
+.Number{
+	width: 25px;
+	height: 25px;
+	border-radius: 2px;
+	color: black;
+	background-color: white;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+.first{
+	background-color: rgba(10, 143, 15, 1);
+	color: white;
+}

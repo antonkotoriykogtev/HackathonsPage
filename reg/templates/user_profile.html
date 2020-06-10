@@ -1,0 +1,304 @@
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Quicksand:300,400|Lato:400,300|Coda|Open+Sans);
+
+/*
+* Art by @jofpin
+* 2014
+*/
+body {
+  background: #f8f5f0;
+  font-family: "Open sans", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+.content-profile-page {
+  margin: 1em auto;
+  width: 44.23em;
+}
+
+.card {
+  background: #fff;
+  border-radius: 0.3rem;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  border: .1em solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 1em;
+}
+
+
+.profile-user-page .img-user-profile .profile-bgHome {
+    border-bottom: .2em solid #f5f5f5;
+  width: 44.23em;
+  height: 16em;
+  }
+.profile-user-page .img-user-profile .avatar {
+    margin: 0 auto;
+  background: #fff;
+  width: 7em;
+  height: 7em;
+  padding: 0.25em;
+  border-radius: 50%;
+  margin-top: -10em;
+  box-shadow: 0 0 .1em rgba(0, 0, 0, 0.35);
+}
+.profile-user-page button {
+    position: absolute;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 7em;
+  background: #3498db;
+  border: 1px solid #2487c9;
+  color: #fff;
+  outline: none;
+  border-radius: 10px;
+  padding: .80em;
+}
+
+.profile-user-page button:hover {
+  background: #51a7e0;
+  transition: background .2s ease-in-out;
+  border: 1px solid #2487c9;
+}
+.profile-user-page .user-profile-data, .profile-user-page .description-profile {
+  text-align: center;
+  padding: 0 1.5em;
+}
+.profile-user-page .user-profile-data h1 {
+  font-family: "Lato", sans-serif;
+  margin-top: 0.35em;
+  color: #292f33;
+  margin-bottom: 0;
+}
+.profile-user-page .user-profile-data p {
+    font-family: "Lato", sans-serif;
+  color: #8899a6;
+  font-size: 1.1em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+.profile-user-page .description-profile {
+  color: #75787b;
+  font-size: 0.98em;
+}
+.profile-user-page .data-user {
+    font-family: "Quicksand", sans-serif;
+  margin-bottom: 0;
+  cursor: pointer;
+  padding: 0;
+  list-style: none;
+  display: table;
+  width: 100.15%;
+}
+.profile-user-page .data-user li {
+  margin: 0;
+  padding: 0;
+  width: 33.33334%;
+  display: table-cell;
+  text-align: center;
+  border-left: 0.1em solid transparent;
+}
+.profile-user-page .data-user li:first-child {
+  border-left: 0;
+}
+.profile-user-page .data-user li:first-child a {
+  border-bottom-left-radius: 0.3rem;
+  }
+.profile-user-page .data-user li:last-child a {
+  border-bottom-right-radius: 0.3rem;
+}
+.profile-user-page .data-user li a, .profile-user-page .data-user li strong {
+  display: block;
+}
+.profile-user-page .data-user li a {
+  background-color: #f7f7f7;
+  border-top: 1px solid rgba(242,242,242,0.5);
+  border-bottom: .2em solid #f7f7f7;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4),0 1px 1px rgba(255,255,255,0.4);
+  padding: .93em 0;
+  color: #46494c;
+}
+.profile-user-page .data-user li a strong, .profile-user-page .data-user li a span {
+  font-weight: 600;
+  line-height: 1;
+}
+.profile-user-page .data-user li a strong {
+  font-size: 2em;
+}
+.profile-user-page .data-user li a span {
+  color: #717a7e;
+}
+.profile-user-page .data-user li a:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-bottom: .2em solid #3498db;
+  color: #3498db;
+}
+.profile-user-page .data-user li a:hover span {
+  color: #3498db;
+}
+
+footer h4 {
+  display: block;
+  text-align: center;
+  clear: both;
+  font-family: "Coda", sans-serif;
+  color: #566965;
+  line-height: 6;
+  font-size: 1em;
+}
+footer h4 a {
+  text-decoration: none;
+  color: #3498db;
+}
+.description-profile{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.profile-user-page.card{
+margin-bottom: 150px;
+}
+.avatar{
+height: 200px;
+width: 200px;
+border-radius: 50%;
+margin-top: 10px;
+margin-left: 10px;
+}
+.parts{
+display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.data-user{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.profile-user-page{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+    </style>
+
+
+{% extends "base.html" %}
+{% block content %}
+    <div class="main">
+        <main>
+	
+<div class="content-profile-page" style="
+    margin-right: 0px;
+    height: 500px;
+    max-height: auto;
+    width: 600px;
+    padding-bottom:200px;
+">
+
+
+
+			<div class="profile-user-page card" style="padding: 50px">
+								<div style="width: 150px; height: 250px;">	
+										<img class="avatar" style="    box-shadow: 0px 4px 9px 0px rgba(0,0,0,0.5);
+" src="http://127.0.0.1:8000/media/{{ user.uzer.avatar }}" alt="jofpin"/>
+								</div>	
+
+								<div class="user-profile-data" style="width: 150px; height: 250px; font-size: 36px; text-align: center;font-family: 'Coda', sans-serif;">
+						            	<h1>{{ user.get_full_name }}</h1><br>
+						         </div>
+
+								<div class="description-profile" style="width: 550px; font-family: 'Coda', sans-serif;height: 250px;">
+							            <h1>О себе: {{ user.uzer.Info}}</h1>
+							          
+							            <h1>Университет: {{ user.uzer.Uni}}</h1>
+							            
+							            <h1>Школа:  {{ user.uzer.School }}</h1>
+							           
+							            <h1>Место проживания: {{ user.uzer.Place }}</h1>
+						        </div>
+			        					
+			        	
+					        
+					        <ul class="data-user">
+					        <li><a><strong>{{ user.uzer.Visits }}</strong><span>Посетители</span></a></li>
+					        <li><a><strong>{{ count }}</strong><span>Мероприятия</span></a></li>
+
+					       </ul>
+
+
+
+			</div>
+
+
+   
+    </div>
+<h1 style="text-align:center; color:white"> Мероприятия и посты пользователя</h1>
+        <br>
+     {% for event in events %}
+     <a href="/event/{{event.id}}" class="event-content-item-link">
+        <div class="event-content-item">
+            <div class="event-content-item-img">
+                <img src="{{ event.image.url }}" alt="">
+            </div>
+            <div class="event-content-item-info">
+                <div class="event-content-item-info-header">
+                    <div class="event-content-item-info-header-name">
+                        <p class="event-content-item-info-header-name_name">{{event.title|safe}}</p>
+                    </div>
+                    <div class="event-content-item-info-header-date">
+                        <p class="event-content-item-info-header-date_date">{{event.event_start|date:"M d" }}-{{event.event_end|date:"M d" }}</p>
+                    </div>
+                </div>
+                <div class="event-content-item-info-main">
+                    <div class="event-content-item-info-main-type">
+                        <p class="event-content-item-info-main-type_type">{{event.filter }} {{event.filter2 }}</p>
+                    </div>
+                    <div class="event-content-item-info-main-disc">
+                        <p class="event-content-item-info-main-disc_disc">
+                            {{event.small_description|safe}}
+                        </p>
+                    </div>
+                     <a href="http://127.0.0.1:8000/profileview/{{event.added_by }}">
+                    <div class="event-content-item-info-main-text">
+                        <p class="event-content-item-info-main-text_text">
+                            Организатор:
+                        </p>
+                    </div>
+                    <div class="event-content-item-info-main-organizer">
+                        <p class="event-content-item-info-main-organizer_organizer">
+                          {{event.added_by }}
+                        </p>
+                    </div>
+                     </a>
+                    <div class="event-content-item-info-main-tags">
+                         {% for tag in event.tags.all %}
+                             <div class="event-content-item-info-main-tags-wrapper">
+                                <p class="event-content-item-info-main-tags-wrapper-text"> {{ tag.name }}</p>
+                            </div>
+
+
+                            {% endfor %}
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+
+
+{% endfor %}
+
+
+
+    </main>
+    </div>
+{% endblock %}

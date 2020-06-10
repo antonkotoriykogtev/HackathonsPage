@@ -1,0 +1,152 @@
+<div class="footer">
+    <footer>
+        <div class="footer-content">
+            <div class="footer-search">
+                <div class="footer-search-icon"><i class="fas fa-search"></i></div>
+                <div class="footer-search-input">
+                     <form action="{% url 'SearchResult' %}" method="get">
+                    <input name="q" type="text" class="footer-search-input_input" oninput="showDeleteButton()" placeholder="Поиск по хакатонам">
+                    </form>
+                </div>
+                <div class="footer-search-delete"  onclick="searchDelete()"></div>
+                <div class="footer-search-delete-background"></div>
+
+
+
+            </div>
+            <!-- <div class="footer-rating">
+                <div class="footer-rating-header">
+                    <div class="footer-rating-header-icon"></div>
+                    <div class="footer-rating-header-text">Топ пользователей</div>
+                </div>
+                <div class="footer-rating-item">
+                    <div class="footer-rating-item-photo">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="footer-rating-item-text">Иванов Иван Иванович</div>
+                    <div class="footer-rating-item-likes">
+                        <div class="footer-rating-item-likes-nums">10</div>
+                        <div class="footer-rating-item-likes-icon"></div>
+                    </div>
+                </div>
+                <div class="footer-rating-item">
+                    <div class="footer-rating-item-photo">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="footer-rating-item-text">Иванов Иван Иванович</div>
+                    <div class="footer-rating-item-likes">
+                        <div class="footer-rating-item-likes-nums">10</div>
+                        <div class="footer-rating-item-likes-icon"></div>
+                    </div>
+                </div>
+                <div class="footer-rating-item">
+                    <div class="footer-rating-item-photo">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="footer-rating-item-text">Иванов Иван Иванович</div>
+                    <div class="footer-rating-item-likes">
+                        <div class="footer-rating-item-likes-nums">10</div>
+                        <div class="footer-rating-item-likes-icon"></div>
+                    </div>
+                </div>
+                <div class="footer-rating-item">
+                    <div class="footer-rating-item-photo">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="footer-rating-item-text">Иванов Иван Иванович</div>
+                    <div class="footer-rating-item-likes">
+                        <div class="footer-rating-item-likes-nums">10</div>
+                        <div class="footer-rating-item-likes-icon"></div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="footer-events">
+                <a href="#">
+                    <div class="footer-events-header">
+                        <div class="footer-events-header-icon"><i class="fas fa-star"></i></div>
+                        <div class="footer-events-header-text">Ежегодные мероприятия</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="footer-events-item">
+                        <div class="footer-events-item-up">
+                            <div class="footer-events-item-up-name">HACK.moscow</div>
+                            <div class="footer-events-item-up-type">Хакатон</div>
+                        </div>
+                        <div class="footer-events-item-down">
+                            <p class="footer-events-item-down-clip">
+                                <span>Теги: Pyton, Data Sciens</span>a
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="footer-events-item">
+                        <div class="footer-events-item-up">
+                            <div class="footer-events-item-up-name">HACK</div>
+                            <div class="footer-events-item-up-type">Хакатон</div>
+                        </div>
+                        <div class="footer-events-item-down">
+                            <p class="footer-events-item-down-clip">
+                                <span>Теги: Pyton, Data Sciens</span>a
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="footer-events-item">
+                        <div class="footer-events-item-up">
+                            <div class="footer-events-item-up-name">HACK</div>
+                            <div class="footer-events-item-up-type">Хакатон</div>
+                        </div>
+                        <div class="footer-events-item-down">
+                            <p class="footer-events-item-down-clip">
+                                <span>Теги: Pyton, Data Scien, пицца, вкусно</span>a
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="footer-events-item last">
+                        <div class="footer-events-item-up">
+                            <div class="footer-events-item-up-name">HACK</div>
+                            <div class="footer-events-item-up-type">Хакатон</div>
+                        </div>
+                        <div class="footer-events-item-down">
+                            <p class="footer-events-item-down-clip">
+                                <span>Теги: Pyton, Data Sciens, пицца, вкусно</span>a
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="/createEvent">
+                <div class="footer-event-create">
+                    <p>Создать мероприятие</p>
+                </div>
+            </a>
+            <a href="/createPost">
+                <div class="footer-event-create">
+                    <p>Написать пост</p>
+                </div>
+            </a>
+            <br>
+            <div style="text-align:center;">
+            <a href="/privacy">
+                <h1> Политика конфиденциальности</h1>
+            </a>
+            <br>
+            <a href="/about_us">
+                <h1>О нас</h1>
+            </a>
+                <br>
+
+                <h1>©Lerteco Inc.</h1>
+
+            </div>
+        </div>
+    </footer>
+</div>
+</div>
+</body>
+</html>

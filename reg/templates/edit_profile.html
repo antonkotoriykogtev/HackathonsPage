@@ -1,0 +1,69 @@
+<style>
+     @import url(https://fonts.googleapis.com/css?family=Quicksand:300,400%7CLato:400,300%7CCoda%7COpen+Sans);
+    main{
+
+        margin-bottom: 50px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    p{
+    font-size: 24px;
+    font-family: "Coda", sans-serif;
+    }
+    input{
+        width: 400px; 
+        border-radius: 10px;
+         outline: none;
+         border: 1px solid #cccccc;
+         margin: : 10px;
+         background-color: #D6D9EA;
+    }
+    #id_first_name,
+    #id_last_name,
+    #id_email{
+        width: 400px; 
+        border-radius: 10px;
+         outline: none;
+         border: 1px solid #cccccc;
+         margin: : 40px;
+    }
+    button{
+        width: 300px;
+        border-radius: 15px;
+        outline: none;
+         border: 1px solid #cccccc;
+
+    }
+    img{
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
+</style>
+
+{% extends "base.html" %}
+{% block content %}
+    <div class="main" style="color:white">
+    <main>
+<form method="post" enctype=multipart/form-data >
+  {% csrf_token %}
+
+<p class="naming"><h2>Имя </h2>{{ user_form.first_name }} </p><br>
+     <p class="naming"><h2>Фамилия</h2>{{ user_form.last_name }} </p><br>
+    <p class="naming"><h2>Почта </h2>{{ user_form.email }} </p><br>
+    {{ profile_form.avatar }} <br>
+    <p class="naming"><h2>День рождения</h2>{{ profile_form.BirthDay }} </p><br>
+    <p class="naming"><h2>Информация о вас</h2>{{ profile_form.Info }}</p><br>
+    <p class="naming"><h2>Школа</h2>{{ profile_form.School }}</p><br>
+    <p class="naming"><h2>Университет</h2>{{ profile_form.Uni }}</p><br>
+    <p class="naming"><h2>Год окончания университета</h2>{{ profile_form.UniEnd }}</p><br>
+    <p class="naming"><h2 >Город</h2>{{ profile_form.Place }}</p><br>
+    <p class="naming"><h2>Стек технологий</h2>{{ profile_form.Skills }}</p><br>
+  <button type="submit">Сохранить</button>
+</form>
+    </main>
+    </div>
+{% endblock %}

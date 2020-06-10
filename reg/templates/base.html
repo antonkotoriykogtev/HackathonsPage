@@ -1,0 +1,23 @@
+
+{% include "header.html" %}
+<!--
+<ul>
+    <li><a class="active" href="/my_content">Мой контент</a></li>
+    <li><a  href='/events'>Мероприятия</a></li>
+    <li><a href='/profile'>Профиль</a></li>
+    <li><a href='/meetups'>Диалоги</a></li>
+    <li><a href='/meetups'>Друзья</a></li>
+
+        <li style="float:right"><a href="/profile">User: </a></li>
+
+     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+
+     <li>
+
+
+</ul>
+-->
+
+     {% block content %}
+     {% endblock %}
+{% include "footer.html" %}

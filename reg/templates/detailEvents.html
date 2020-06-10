@@ -1,0 +1,58 @@
+
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="main">
+        <main style="height: 100vh;">
+            <div class="detailEvent">
+                <div class="detailEvent-img">
+                    <!-- <img src="{{ event_full.image.url }}" alt=""> -->
+                    <img src="/PR-11107_555x278_blog_preview_fb_tw2@2x.png" alt="">
+                </div>
+                <div class="detailEvent-header">
+                    <div class="detailEvent-header-title">
+                        <h1>
+                            {{event_full.title|safe}}
+                        </h1>
+                    </div>
+                    <div class="detailEvent-header-type">
+                        <p>
+                            <!-- {event_type} -->
+                            <!-- онлайн -->
+                        </p>
+                    </div>
+                </div>
+                <div class="detailEvent-start">
+                    <div class="detailEvent-start-text">
+                        <p>Начало:</p>
+                    </div>
+                    <div class="detailEvent-start-date">
+                        <p>
+                            {{ event_full.event_start }}
+                        </p>
+                    </div>
+                </div>
+                <div class="detailEvent-start">
+                    <div class="detailEvent-start-text">
+                        <p>Окончание:</p>
+                    </div>
+                    <div class="detailEvent-start-date">
+                        <p>
+                            {{ event_full.event_end }}
+                        </p>
+                    </div>
+                </div>
+                <div class="detailEvent-disc">
+                    <p>
+                        {{ event_full.Text|safe  }}
+
+                    </p>
+                </div>
+                <div class="detailEvent-looks">
+                    <p>
+                        Просмотрели {{ event_full.visits }} раз
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+    {% endblock %}

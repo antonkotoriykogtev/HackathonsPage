@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main">
+  <main>
+
+{% if user.is_authenticated %}
+
+      <div class="profile">
+          <div class="profile-header">
+              <div class="profile-img">
+                  <img src="http://127.0.0.1:8000/media/{{ user.uzer.avatar }}" alt="Аватарка"/>
+              </div>
+              <div class="profile-add">
+                  <div class="profile-add-name">
+                  <p>
+                      <!-- Филиппов Сергей -->
+                      {{ user.get_full_name }}
+                  </p>
+                  </div>
+                  <div class="profile-add-btn">
+                      <a href="http://127.0.0.1:8000/add_friend/{{ user.username }}" class="button-link"><button>Добавить в друзья</button></a>
+                  </div>
+              </div>
+          </div>
+          <div class="profile-disc">
+              <div class="profile-disc-bDay disc-item wrap">
+                  <p>День Рождения: {{ user.uzer.BirthDay }}</p>
+              </div>
+              <div class="profile-disc-info disc-item wrap">
+                  <p>Информация о вас: {{ user.uzer.Info}}</p>
+              </div>
+              <div class="profile-disc-looks disc-item wrap">
+                  <p>Просмотры профиля: {{ user.uzer.Visits }}</p>
+              </div>
+              <!-- <div class="profile-disc-friends disc-item wrap">
+                  <p>Друзья: {{ user.uzer.Friends }}</p>
+              </div> -->
+              <div class="profile-disc-school disc-item wrap">
+                  <p>Школа: {{ user.uzer.School }}</p>
+              </div>
+              <div class="profile-disc-un disc-item wrap">
+                  <p>Университет: {{ user.uzer.Uni }}</p>
+              </div>
+              <div class="profile-disc-livePlace wrap">
+                  <p>Место проживания: {{ user.uzer.Place }}</p>
+              </div>
+          </div>
+          <div class="profile-btn">
+          <a href="{% url 'logout'%}">
+              <div class="footer-event-create profile-btn-link"">
+                  Выйти
+              </div>
+          </a>
+          <a  href="/edit_profile">
+              <div class="footer-event-create profile-btn-link"">
+              Изменить информацию
+              </div>
+          </a>
+          </div>
+      </div>
+      {% else %}
+      <div class="else">
+          <p>Для использования полного функцонала вам необходимо зарегистрироваться</p>
+      </div>
+  {% endif %}
+</main>
+</div>
+
+    <div class="content-profile-page" style="
+    margin-right: 0px;
+    height: 500px;
+    max-height: auto;
+    width: 600px;
+    padding-bottom:200px;
+">
+
+
+
+			<div class="profile-user-page card" style="padding: 50px">
+								<div style="width: 150px; height: 250px;">
+										<img class="avatar" style="    box-shadow: 0px 4px 9px 0px rgba(0,0,0,0.5);
+" src="https://toxa.pythonanywhere.com/{{ user.uzer.avatar }}" alt="jofpin"/>
+								</div>
+
+								<div class="user-profile-data" style="width: 150px; height: 250px; font-size: 36px; text-align: center;font-family: 'Coda', sans-serif;">
+						            	<h1>{{ user.get_full_name }}</h1><br>
+
+						         </div>
+
+								<div class="description-profile" style="width: 550px; font-family: 'Coda', sans-serif;height: 250px;">
+							            <h1>Имя и фамилия: {{ user.get_full_name }}</h1>
+                                        <h1>Информация о вас: {{ user.uzer.Info}}</h1>
+                                        <h1>Bday: {{ user.uzer.BirthDay }}</h1>
+                                        <h1>Просмотры профиля: {{ user.uzer.Visits }}</h1>
+                                        <h1>Друзья: {{ user.uzer.Friends }}</h1>
+                                        <h1>Школа: {{ user.uzer.School }}</h1>
+                                        <h1>Университет: {{ user.uzer.Uni }}</h1>
+                                        <h1>Место проживания: {{ user.uzer.Place }}</h1>
+						        </div>
+
+
+
+					        <ul class="data-user">
+					        <li><a><strong>{{ user.uzer.Visits }}</strong><span>Посетители</span></a></li>
+					        <li><a><strong>{{ user.uzer.Friends }}</strong><span>Друзья</span></a></li>
+					       </ul>
+                            <a href="{% url 'logout'%}">
+                             <div class="footer-event-create" style="margin-left:100px">
+                                 Выйти
+                             </div>
+                            </a>
+                           <a  href="/edit_profile">
+                            <div class="footer-event-create" style="margin-left:100px">
+                                Изменить информацию
+                            </div>
+                            </a>
+
+			</div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+ </div>
+
+{% endblock %}

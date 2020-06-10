@@ -1,0 +1,237 @@
+
+
+{% load i18n %}
+{% load account %}
+
+{% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
+
+
+
+    <style>
+    body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(11, 26, 66);
+}
+main {
+  padding: 10vw 0;
+}
+ul {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+}
+li {
+  margin: 10vw 0;
+  list-style-type: none;
+  text-align: left;
+}
+p {
+  display: block;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 2vw;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+li:first-child {
+  margin-top: 0;
+}
+li:last-child {
+  margin-bottom: 0;
+}
+li:nth-child(even) {
+  text-align: right;
+}
+a {
+  color: #fff;
+}
+a:hover {
+  text-decoration: none;
+}
+[data-reveal="content"] {
+  display: inline-block;
+  position: relative;
+}
+[data-reveal="cover"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: 1;
+}
+[data-reveal="text"] {
+  opacity: 0;
+}
+[data-js="reveal"].loaded [data-reveal="cover"] {
+  -webkit-animation: reveal-cover 1.5s ease-in-out;
+          animation: reveal-cover 1.5s ease-in-out;
+}
+[data-js="reveal"].loaded [data-reveal="text"] {
+  opacity: 1;
+  -webkit-animation: reveal-text 1.5s ease-in-out;
+          animation: reveal-text 1.5s ease-in-out;
+}
+@-webkit-keyframes reveal-cover {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  44% {
+    width: 100%;
+    left: 0;
+  }
+  54% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes reveal-cover {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  44% {
+    width: 100%;
+    left: 0;
+  }
+  54% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@-webkit-keyframes reveal-text {
+  0% {
+    opacity: 0;
+  }
+  44% {
+    opacity: 0;
+  }
+  54% {
+    opacity: 1;
+  }
+}
+@keyframes reveal-text {
+  0% {
+    opacity: 0;
+  }
+  44% {
+    opacity: 0;
+  }
+  54% {
+    opacity: 1;
+  }
+}
+button {
+  background-color: #6BBE92;
+  width: 100px;
+  height: 30px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+button:hover {
+  background-color: rgb(118, 212, 162);
+  width: 100px;
+  height: 30px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: rgb(243, 236, 236);
+  font-weight: bold;
+}
+    </style>
+    <script>
+
+            const COLOR_LIST = ['#7f00ff', '#ff00ff', '#0000ff', '#007fff', '#00ffff'];
+            let $targetList;
+
+            const init = () => {
+
+              $targetList = document.querySelectorAll('[data-js="reveal"]');
+
+              setup();
+
+              window.addEventListener('scroll', onScroll, false);
+              window.dispatchEvent(new Event('scroll'));
+
+            };
+
+            const getArrayRandomValue = array => array[Math.floor(Math.random() * array.length)];
+
+            const setup = () => {
+
+              for (const $target of $targetList) {
+
+                const content = $target.innerHTML;
+                const color = 'revealColor' in $target.dataset ? $target.dataset.revealColor : getArrayRandomValue(COLOR_LIST);
+                $target.innerHTML = `<span data-reveal="content"><div data-reveal="cover" style="background-color:${color}"></div><span data-reveal="text">${content}</span></span>`;
+
+              }
+
+            };
+
+            const onScroll = () => {
+
+              const windowH = window.innerHeight;
+              const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+              const isMostScroll = document.body.clientHeight <= scrollTop + windowH;
+
+              for (const $target of $targetList) {
+
+                if ($target.classList.contains('loaded')) continue;
+
+                const rect = $target.getBoundingClientRect();
+                const top = rect.top + scrollTop;
+                if (isMostScroll || top <= scrollTop + windowH * .8) $target.classList.add('loaded');
+
+              }
+
+            };
+
+            document.addEventListener('DOMContentLoaded', init, false);
+    </script>
+
+
+    <div class="main" style="color:white">
+    <main>
+
+
+{% if confirmation %}
+ <ul class="inner">
+      <li>
+        <p data-js="reveal">Подтвердите e-mail адрес.</p>
+        <p data-js="reveal">Пожалуйста, подтвердите {{ confirmation.email_address.email }} пользователя {{ confirmation.email_address.user }}.</p>
+        <form id="data" method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+        {% csrf_token %}
+            <button type="submit" form="data">{% trans 'Confirm' %}</button>
+
+        </form>
+      </li>
+ </ul>
+{% else %}
+
+{% url 'account_email' as email_url %}
+
+<p>This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new e-mail confirmation request</a>.</p>
+
+{% endif %}
+
+
+ </main>
+    </div>
+

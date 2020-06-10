@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lerteq</title>
+       {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/first_reg.css' %}">
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/second_reg.css' %}">
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/success.css' %}">
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/third_reg.css' %}">
+    <script src="https://kit.fontawesome.com/fdec119fda.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+<div class="main" style="margin-top:0px">
+	<h1>ВХОД</h1>
+
+    {% if form.errors %}
+      <p>Ваш логин и пароль не совпадают</p>
+    {% endif %}
+	<form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        Имя пользователя или почта
+        {{ form.username }}<br>
+		{{ form.password.label_tag }}
+        {{ form.password }}<br>
+        <input type="submit" name="login" value="Войти">
+	</form>
+{% load socialaccount %}
+    <a href="{% provider_login_url 'vk' method='oauth2' %}">
+		<div class="ref vk" style="background-color: #4680C2">
+			<i class="fab fa-vk"></i>
+			Войти через Вконтакте
+		</div>
+	</a>
+
+        <a href="{% url 'password_reset' %}">
+            <p style="text-align:center;margin-top: 0px;">Забыли пароль?</p>
+
+			<p id="reg" style="background-color:rgb(118, 212, 162); color:black">Восстановить пароль</p>
+		</a>
+        <a href='/accounts/signup/'>
+            <p style="text-align:center; margin-top: 0px;">Нет аккаунта?</p>
+
+			<p id="reg" style="background-color:rgb(118, 212, 162); color:black">Регистрация</p>
+		</a>
+
+</div>
+
+
+</body>
+</html>

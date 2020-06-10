@@ -1,0 +1,159 @@
+body{
+	background-color: rgba(7, 30, 61, 1);
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+.main{
+	background-color: rgba(1, 54, 114, 1);
+	width: 400px;
+	height: 600px;
+	color: white;
+	border-radius: 20px;
+	position: relative;
+	display: flex;
+  	justify-content: space-around;
+  	align-items: center;
+  	flex-direction: column;
+  	transform: scale(1,1);
+  	transition-duration: 1s;
+}
+h1{
+	height: 42px;
+	font-size: 36px;
+	font-family: "Roboto";
+	font-weight: normal;
+}
+.exit{
+	position: absolute;
+	right:-10px;
+	top:-10px;
+	border-radius: 50px;
+	height: 30px;
+	width: 30px;
+	background-color: white;
+	color: black;
+	display: flex;
+  	justify-content: space-around;
+  	align-items: center;
+  	font-family: "Roboto";
+}
+.exit:hover{
+	background-color: #B0B7C6;
+}
+form{
+	width: 300px;
+	font-family: "Roboto";
+	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+  	flex-direction: column;
+}
+.ref{
+	width: 300px;
+	height: 50px;
+	border-radius: 10px;
+	font-family: "Roboto";
+	display: flex;
+  	justify-content: space-around;
+  	align-items: center;
+  	flex-direction: row;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+.google{
+	background-color: rgba(220, 20, 60, 1);
+}
+.google:hover{
+	background-color: #AB1719;
+}
+.vk{
+	background-color: #4680C2;
+	background-color: #4680C2;
+	background-color: #4680C2;
+}
+.vk:hover{
+	background-color: #27279B;
+}
+
+input{
+	display: block;
+	width: 290px;
+	border-radius: 5px;
+	border-style: none;
+	height:30px;
+}
+input[type=submit]{
+	width: 200px;
+	display: block;
+	background-color: rgba(7, 30, 61, 1);
+	color: white;
+	font-size: 14px;
+}
+.or{
+	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+  	flex-direction: row;
+}
+hr{
+	border: none;
+	background-color: white;
+	display: table-cell;
+	width: 115px;
+	margin: 0 15px;
+	height: 1px;
+}
+span{
+	width: 40px;
+	font-family: "Roboto";
+}
+img{
+	width: 40px;
+	height: 40px;
+}
+p{
+	font-family: "Roboto";
+	font-size: 14px;
+}
+#reg{
+	width: 200px;
+	height: 30px;
+	display: block;
+	background-color: rgba(7, 30, 61, 1);
+	color: white;
+	border-radius: 5px;
+	border-style: none;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	flex-direction: row;
+}
+#reg:hover{
+	background-color: #20155E;
+}
+
+input[type=email],input[type=password]{
+	padding-left: 10px;
+}
+.info{
+	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+  	flex-direction: column;
+}
+.mainSecond{
+	background-color: rgba(1, 54, 114, 1);
+	width: 400px;
+	height: 450px;
+	color: white;
+	border-radius: 20px;
+	margin-top: 200px;
+	position: relative;
+	display: flex;
+  	justify-content: space-around;
+  	align-items: center;
+  	flex-direction: column;
+}
